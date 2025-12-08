@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>Carte Interactive</title>
+  <style>
+    body {
+      margin: 0;
+      background-color: #222;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      font-family: Arial, sans-serif;
+    }
+
+    .carte {
+      position: relative;
+      width: 480px;  /* largeur de ton image */
+      height: 320px; /* hauteur de ton image */
+    }
+
+    .carte img {
+      display: block;
+      width: 100%;
+      height: 100%;
+    }
+
+    .zone-group {
+      position: static; /* Le groupe ne doit pas créer un nouveau référentiel */
+      pointer-events: none; /* Le groupe n'intercepte pas les clics */
+    }
+
+    .zone {
+      position: absolute;
+      cursor: pointer;
+      background-color: transparent;
+      transition: background-color 0.2s;
+      pointer-events: auto; /* Les liens restent cliquables */
+    }
+
+    /* Surbrillance sur tout le groupe */
+    .zone-group:hover .zone,
+    .zone:hover {
+      background-color: rgba(255, 255, 0, 0.4);
+      border-radius: 4px;
+    }
+
+  </style>
+</head>
+<body>
+  <div class="carte">
+    <img src="erdes.png" alt="Carte Interactive d'Erdès">
+
+    <!-- Zone cliquable pour Bourg-Serti -->
+    <a href="https://pokemillennium.miraheze.org/wiki/Bourg-Serti" class="zone"
+       style="top:224px; left:400px; width:16px; height:16px;"></a>
+
+    <!-- Groupe Route 1 -->
+    <div class="zone-group">
+        <a href="https://pokemillennium.miraheze.org/wiki/Route_1" class="zone"
+           style="top:192px; left:384px; width:16px; height:32px;"></a>
+
+        <a href="https://pokemillennium.miraheze.org/wiki/Route_1" class="zone"
+           style="top:224px; left:368px; width:32px; height:16px;"></a>
+    </div>
+    
+    <!-- Zone cliquable pour Oxydielle -->
+    <a href="https://pokemillennium.miraheze.org/wiki/Oxydielle" class="zone"
+       style="top:224px; left:352px; width:16px; height:16px;"></a>
+    
+    <!-- Zone cliquable pour Bois Malachite -->
+    <a href="https://pokemillennium.miraheze.org/wiki/Bois_Malachite" class="zone"
+       style="top:224px; left:336px; width:16px; height:16px;"></a>
+    
+    <!-- Groupe Route 2 -->
+    <div class="zone-group">
+        <a href="https://pokemillennium.miraheze.org/wiki/Route_2" class="zone"
+           style="top:224px; left:288px; width:48px; height:16px;"></a>
+
+        <a href="https://pokemillennium.miraheze.org/wiki/Route_2" class="zone"
+           style="top:240px; left:304px; width:16px; height:16px;"></a>
+    </div>
+    
+    <!-- Zone cliquable pour Désert Toxitouche -->
+    <a href="https://pokemillennium.miraheze.org/wiki/Désert_Toxitouche" class="zone"
+       style="top:256px; left:304px; width:16px; height:16px;"></a>
+
+    <!-- Groupe Route 3 -->
+    <div class="zone-group">
+        <a href="https://pokemillennium.miraheze.org/wiki/Route_3" class="zone"
+           style="top:192px; left:288px; width:16px; height:32px;"></a>
+    
+        <a href="https://pokemillennium.miraheze.org/wiki/Route_3" class="zone"
+           style="top:192px; left:304px; width:16px; height:16px;"></a>
+    </div>
+    
+    <!-- Zone cliquable pour Mine Oxyfer -->
+    <a href="https://pokemillennium.miraheze.org/wiki/Mine_Oxyfer" class="zone"
+       style="top:192px; left:320px; width:16px; height:16px;"></a>
+    
+    <!-- Zone cliquable pour Cobaltia -->
+    <a href="https://pokemillennium.miraheze.org/wiki/Cobaltia" class="zone"
+       style="top:176px; left:288px; width:16px; height:16px;"></a>
+    
+    <!-- Groupe Route 4 -->
+    <div class="zone-group">
+        <a href="https://pokemillennium.miraheze.org/wiki/Route_4" class="zone"
+           style="top:144px; left:288px; width:16px; height:32px;"></a>
+    
+        <a href="https://pokemillennium.miraheze.org/wiki/Route_4" class="zone"
+           style="top:144px; left:224px; width:64px; height:16px;"></a>
+    
+        <a href="https://pokemillennium.miraheze.org/wiki/Route_4" class="zone"
+           style="top:160px; left:240px; width:16px; height:16px;"></a>
+    </div>
+    
+    <!-- Zone cliquable pour Tourbilac -->
+    <a href="https://pokemillennium.miraheze.org/wiki/Tourbilac" class="zone"
+       style="top:128px; left:256px; width:16px; height:16px;"></a>
+    
+    <!-- Zone cliquable pour Arbre Millénaire -->
+    <a href="https://pokemillennium.miraheze.org/wiki/Arbre_Millénaire" class="zone"
+       style="top:112px; left:256px; width:16px; height:16px;"></a>
+    
+    <!-- Zone cliquable pour Plaines Sablerouge -->
+    <a href="https://pokemillennium.miraheze.org/wiki/Plaines_Sablerouges" class="zone"
+       style="top:176px; left:240px; width:16px; height:16px;"></a>
+    
+    <!-- Zone cliquable pour Crypte Ensevelie -->
+    <a href="https://pokemillennium.miraheze.org/wiki/Crypte_Ensevelie" class="zone"
+       style="top:176px; left:256px; width:16px; height:16px;"></a>
+    
+    <!-- Zone cliquable pour Halicité -->
+    <a href="https://pokemillennium.miraheze.org/wiki/Halicité" class="zone"
+       style="top:144px; left:208px; width:16px; height:16px;"></a>
+    
+    <!-- Groupe Route 5 -->
+    <div class="zone-group">
+        <a href="https://pokemillennium.miraheze.org/wiki/Route_5" class="zone"
+           style="top:160px; left:208px; width:16px; height:32px;"></a>
+
+        <a href="https://pokemillennium.miraheze.org/wiki/Route_5" class="zone"
+           style="top:176px; left:144px; width:64px; height:16px;"></a>
+    </div>
+    
+    <!-- Zone cliquable pour Usine de Méga-Bracelets -->
+    <a href="https://pokemillennium.miraheze.org/wiki/Usine_de_Méga-Bracelets" class="zone"
+       style="top:160px; left:176px; width:16px; height:16px;"></a>
+    
+    <!-- Zone cliquable pour Glacier Salant -->
+    <a href="https://pokemillennium.miraheze.org/wiki/Glacier_Salant" class="zone"
+       style="top:192px; left:144px; width:16px; height:16px;"></a>
+    
+    <!-- Zone cliquable pour Port Azurite -->
+    <a href="https://pokemillennium.miraheze.org/wiki/Port_Azurite" class="zone"
+       style="top:176px; left:128px; width:16px; height:16px;"></a>
+    
+    <!-- Groupe Chenal 16 -->
+    <div class="zone-group">
+        <a href="https://pokemillennium.miraheze.org/wiki/Chenal_16" class="zone"
+           style="top:176px; left:96px; width:32px; height:16px;"></a>
+    
+        <a href="https://pokemillennium.miraheze.org/wiki/Chenal_16" class="zone"
+           style="top:192px; left:96px; width:16px; height:32px;"></a>
+    </div>
+    
+    <!-- Zone cliquable pour Ruines Englouties -->
+    <a href="https://pokemillennium.miraheze.org/wiki/Ruines_Englouties" class="zone"
+       style="top:224px; left:96px; width:16px; height:16px;"></a>
+    
+    <!-- Groupe Chenal 17 -->
+    <div class="zone-group">
+        <a href="https://pokemillennium.miraheze.org/wiki/Chenal_17" class="zone"
+           style="top:192px; left:128px; width:16px; height:64px;"></a>
+    
+        <a href="https://pokemillennium.miraheze.org/wiki/Chenal_17" class="zone"
+           style="top:224px; left:112px; width:16px; height:16px;"></a>
+    
+        <a href="https://pokemillennium.miraheze.org/wiki/Oxydielle" class="zone"
+           style="top:240px; left:96px; width:32px; height:32px;"></a>
+    </div>
+    
+    <!-- Zone cliquable pour Route Victoire -->
+    <a href="https://pokemillennium.miraheze.org/wiki/Route_Victoire" class="zone"
+       style="top:256px; left:128px; width:16px; height:16px;"></a>
+    
+    <!-- Zone cliquable pour Néo Ligue Pokémon -->
+    <a href="https://pokemillennium.miraheze.org/wiki/Néo_Ligue_Pokémon" class="zone"
+       style="top:272px; left:128px; width:16px; height:16px;"></a>
+    
+    <!-- Groupe Route 6 -->
+    <div class="zone-group">
+        <a href="https://pokemillennium.miraheze.org/wiki/Route_6" class="zone"
+           style="top:112px; left:208px; width:16px; height:32px;"></a>
+
+        <a href="https://pokemillennium.miraheze.org/wiki/Route_6" class="zone"
+           style="top:96px; left:224px; width:16px; height:16px;"></a>
+    </div>
+    
+    <!-- Zone cliquable pour Marais Obsidien -->
+    <a href="https://pokemillennium.miraheze.org/wiki/Marais_Obsidien" class="zone"
+       style="top:112px; left:224px; width:16px; height:16px;"></a>
+    
+    <!-- Zone cliquable pour Tourbaline -->
+    <a href="https://pokemillennium.miraheze.org/wiki/Tourbaline" class="zone"
+       style="top:80px; left:224px; width:16px; height:16px;"></a>
+    
+    <!-- Groupe Route 7 -->
+    <div class="zone-group">
+        <a href="https://pokemillennium.miraheze.org/wiki/Route_7" class="zone"
+           style="top:48px; left:240px; width:16px; height:48px;"></a>
+    
+        <a href="https://pokemillennium.miraheze.org/wiki/Route_7" class="zone"
+           style="top:32px; left:256px; width:16px; height:32px;"></a>
+    </div>
+    
+    <!-- Zone cliquable pour Caverne Cristalline -->
+    <a href="https://pokemillennium.miraheze.org/wiki/Caverne_Cristalline" class="zone"
+       style="top:16px; left:256px; width:16px; height:16px;"></a>
+    
+    <!-- Zone cliquable pour Lapizuli -->
+    <a href="https://pokemillennium.miraheze.org/wiki/Lapizuli" class="zone"
+       style="top:48px; left:272px; width:16px; height:16px;"></a>
+    
+    <!-- Zone cliquable pour Route 8 -->
+    <a href="https://pokemillennium.miraheze.org/wiki/Route_8" class="zone"
+       style="top:48px; left:288px; width:48px; height:16px;"></a>
+    
+    <!-- Zone cliquable pour Peridone -->
+    <a href="https://pokemillennium.miraheze.org/wiki/Peridone" class="zone"
+       style="top:48px; left:336px; width:16px; height:16px;"></a>
+    
+    <!-- Zone cliquable pour Route 15 -->
+    <a href="https://pokemillennium.miraheze.org/wiki/Route_15" class="zone"
+       style="top:48px; left:352px; width:16px; height:16px;"></a>
+    
+    <!-- Zone cliquable pour Jungle Cacophonique -->
+    <a href="https://pokemillennium.miraheze.org/wiki/Jungle_Cacophonique" class="zone"
+       style="top:32px; left:352px; width:16px; height:16px;"></a>
+    
+    <!-- Zone cliquable pour QG de la Résistence -->
+    <a href="https://pokemillennium.miraheze.org/wiki/QG_de_la_Résistence" class="zone"
+       style="top:16px; left:352px; width:16px; height:16px;"></a>
+    
+    <!-- Groupe Route 9 -->
+    <div class="zone-group">
+        <a href="https://pokemillennium.miraheze.org/wiki/Route_9" class="zone"
+           style="top:64px; left:336px; width:16px; height:32px;"></a>
+    
+        <a href="https://pokemillennium.miraheze.org/wiki/Route_9" class="zone"
+           style="top:80px; left:352px; width:32px; height:16px;"></a>
+    </div>
+    
+    <!-- Zone cliquable pour Topazira -->
+    <a href="https://pokemillennium.miraheze.org/wiki/Topazira" class="zone"
+       style="top:96px; left:336px; width:16px; height:16px;"></a>
+    
+    <!-- Groupe Route 10 -->
+    <div class="zone-group">
+        <a href="https://pokemillennium.miraheze.org/wiki/Route_10" class="zone"
+           style="top:96px; left:288px; width:48px; height:16px;"></a>
+    
+        <a href="https://pokemillennium.miraheze.org/wiki/Route_10" class="zone"
+           style="top:80px; left:256px; width:48px; height:16px;"></a>
+    </div>
+    
+        <!-- Zone cliquable pour Ferme Meu-Meu -->
+    <a href="https://pokemillennium.miraheze.org/wiki/Ferme_Meu-Meu" class="zone"
+       style="top:64px; left:272px; width:16px; height:16px;"></a>
+    
+    <!-- Zone cliquable pour Route 11 -->
+    <a href="https://pokemillennium.miraheze.org/wiki/Route_11" class="zone"
+       style="top:112px; left:288px; width:16px; height:32px;"></a>
+    
+        <!-- Zone cliquable pour Engelune -->
+    <a href="https://pokemillennium.miraheze.org/wiki/Engelune" class="zone"
+       style="top:80px; left:384px; width:16px; height:16px;"></a>
+    
+        <!-- Zone cliquable pour Mont Grelotte -->
+    <a href="https://pokemillennium.miraheze.org/wiki/Mont_Grelotte" class="zone"
+       style="top:64px; left:416px; width:16px; height:16px;"></a>
+    
+        <!-- Zone cliquable pour Route 12 -->
+    <a href="https://pokemillennium.miraheze.org/wiki/Route_12" class="zone"
+       style="top:96px; left:384px; width:16px; height:16px;"></a>
+    
+        <!-- Zone cliquable pour Mont Rugiflamme -->
+    <a href="https://pokemillennium.miraheze.org/wiki/Mont_Rugiflamme" class="zone"
+       style="top:112px; left:384px; width:16px; height:16px;"></a>
+    
+        <!-- Zone cliquable pour Dédale Ardent -->
+    <a href="https://pokemillennium.miraheze.org/wiki/Dédale_Ardent" class="zone"
+       style="top:112px; left:400px; width:16px; height:16px;"></a>
+    
+        <!-- Zone cliquable pour Grenava -->
+    <a href="https://pokemillennium.miraheze.org/wiki/Grenava" class="zone"
+       style="top:128px; left:384px; width:16px; height:16px;"></a>
+    
+        <!-- Zone cliquable pour Route 13 -->
+    <a href="https://pokemillennium.miraheze.org/wiki/Route_13" class="zone"
+       style="top:128px; left:352px; width:32px; height:16px;"></a>
+    
+        <!-- Zone cliquable pour Valée Serpentine -->
+    <a href="https://pokemillennium.miraheze.org/wiki/Valée_Serpentine" class="zone"
+       style="top:128px; left:336px; width:16px; height:16px;"></a>
+    
+        <!-- Zone cliquable pour Route 14 -->
+    <a href="https://pokemillennium.miraheze.org/wiki/Route_14" class="zone"
+       style="top:144px; left:384px; width:16px; height:32px;"></a>
+    
+        <!-- Zone cliquable pour Plateau Foudrage -->
+    <a href="https://pokemillennium.miraheze.org/wiki/Plateau_Foudrage" class="zone"
+       style="top:144px; left:400px; width:16px; height:16px;"></a>
+    
+        <!-- Zone cliquable pour Jasperia -->
+    <a href="https://pokemillennium.miraheze.org/wiki/Jasperia" class="zone"
+       style="top:176px; left:384px; width:16px; height:16px;"></a>
+    
+        <!-- Zone cliquable pour Route 18 -->
+    <a href="https://pokemillennium.miraheze.org/wiki/Route_18" class="zone"
+       style="top:240px; left:384px; width:16px; height:64px;"></a>
+    
+        <!-- Zone cliquable pour Méga Stade -->
+    <a href="https://pokemillennium.miraheze.org/wiki/Méga-Stade" class="zone"
+       style="top:288px; left:400px; width:16px; height:16px;"></a>
+    
+  </div>
+</body>
+</html>
